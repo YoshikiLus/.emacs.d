@@ -1,0 +1,19 @@
+# key: table
+# name: insertTable
+# --
+\begin{table}[htbp]
+ \begin{center}
+  \label{table: $0 }
+  \caption{ }
+  \begin{tabular}{c|c}
+   \hline
+     &  \\
+   \hline
+     &  \\
+     &  \\
+     &  \\
+     &  \\
+   \hline
+  \end{tabular}
+ \end{center}
+\end{table}

@@ -1,0 +1,117 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Tue May  8 19:35:02 2018
+;; Desktop file format version 208
+;; Emacs version 25.3.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (23281 32086 758435 0) (desktop . "208") "freedom@freedoms-MacBook-Air.local" nil nil ((((font-backend mac-ct) (fontsize . 0) (font . "-*-Menlo-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 2) (vertical-scroll-bars . right) (horizontal-scroll-bars) (foreground-color . "gray80") (background-color . "#181a26") (line-spacing) (left-fringe . 8) (right-fringe . 8) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 15) (scroll-bar-height . 0) (alpha) (fullscreen) (display-type . color) (background-mode . dark) (cursor-color . "green") (environment) (powerline-cache) (frameset--id . "2BF7-2961-376E-3717") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (right-divider-width . 0) (bottom-divider-width . 0) (icon-name) (visibility . t) (display . "freedoms-MacBook-Air.local") (explicit-name) (tool-bar-position . top) (height . 60) (width . 97) (left . 5) (top . 23)) ((min-height . 8) (min-width . 10) (min-height-ignore . 8) (min-width-ignore . 10) (min-height-safe . 2) (min-width-safe . 2) (min-pixel-height . 112) (min-pixel-width . 70) (min-pixel-height-ignore . 112) (min-pixel-width-ignore . 70) (min-pixel-height-safe . 28) (min-pixel-width-safe . 14)) vc (pixel-width . 710) (pixel-height . 826) (total-width . 101) (total-height . 59) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 710) (pixel-height . 406) (total-width . 101) (total-height . 29) (normal-height . 0.5) (normal-width . 1.0) (buffer "*OCaml*" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins 3) (scroll-bars nil 3 t nil 0 nil) (vscroll . 0) (dedicated) (point . 5653) (start . 5184))) (leaf (last . t) (pixel-width . 710) (pixel-height . 420) (total-width . 101) (total-height . 30) (normal-height . 0.5) (normal-width . 1.0) (buffer "*OCaml*" (selected) (hscroll . 0) (fringes 8 8 nil) (margins 3) (scroll-bars nil 3 t nil 0 nil) (vscroll . 0) (dedicated) (point . 5653) (start . 5184)))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("í•∆í°ºí•ﬁ" "theme" "tuareg" "test.mlR"))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/.emacs.d/init.el" "~/.bashrc"))
+(setq kill-ring '("# let rec union a b = match (a,b) with\n  | ([],b) -> b\n  | (a,[]) -> a\n  | (ha::ta,hb::tb) ->\n     if ha = hb\n     then union ta (hb::tb) \n     else \n       if (ha > hb) then union (ha::hb::ta) tb\n       else union ta (ha::hb::tb);;\n                val union : 'a list -> 'a list -> 'a list = <fun>\n# union [1;3;4;6] [1;3;8;16];;\n- : int list = [1; 3; 4; 6; 8; 16]\n# " "p" "let rec union a b = match (a,b) with\n  | ([],b) -> b\n  | (a,[]) -> a\n  | (ha::ta,hb::tb) ->\n     if ha = hb\n     then union ta hb::tb \n     else \n       if ha >hb then hb::(union ha tb)\n       else union ta ha::hb::tb;;" "let cm (x1,y1) (x2,y2) =\n    (x1*.x2-.y1*.y2, x1*.y2+x2*.y1)" "let tuple1=(1,\"one\");;" "let tuple1=(1,\"one\");;" "rlwrap ocaml" "#include<stdio.h>\n#include<stdlib.h>\n\n\nint main(int argc, char* argv[]){\n  int i=0;\n  if(argc==0){\n    return 0;\n  }else{\n    int sum=atoi(argv[i]) + main(argc-1, argv+1);\n    printf(\"%d\\n\",sum);\n  }\n}\n" "# let rec range m n =\n    if  m=n+1 then []\n    else [m]@(range (m+1) n);;\n  val range : int -> int -> int list = <fun>\n# range 3 6;;\n# - : int list = [3; 4; 5; 6]\n# " "let rec range m n =\n    if  m=n then []\n    else [m]::(range (m+1) n);;" "let rec range m n =\n    if  m=n then []\n    else (range (m+1) n)::m;;" "let rec range m n =\n    if  m=n then []\n    else (range (m+1) n)::m::[];;" "let rec range m n =\n    if  m=n then []\n    else (range (m+1) n)@m@[];;" "let rec range m n =\n    if  m=n then []\n    else (range m+1 n)@m@[];;" "# let rec union a b =\n    match a with\n    | [] -> b\n    | h::t -> if member h b\n              then  union t b\n              else  union t (h::b);;\n\nval union : 'a list -> 'a list -> 'a list = <fun>\n#   union [3;5;7] [1;5;3];;\n#   - : int list = [7; 1; 5; 3]" "#   let rec member a ls =\n    match ls with\n    | [] -> false\n    | h::t -> (a=h) || member a t;;\n\nval member : 'a -> 'a list -> bool = <fun>\n" "let rec union a b =\n    match a with\n    | [] -> b\n    | h::t -> if member h b\n              then  union t b\n              else  union t (h::b);;\n" "let rec union a b =\n    match a with\n    | [] -> \n    | h::t -> if member h b\n              then  a::union t b\n              else  union t b;;" "let rec member a ls =\n    match ls with\n    | [] -> false\n    | h::t -> (a::h) || member a t;;\n" "let distance x y = sqrt(x*.x +. y*.y);;" "distance x y = sqrt(x*.x +. y*.y);;" "let four_times s =\n    let twice = s^s in\n    twice ^ twice;;" "(setq auto-mode-alist (cons '(\"ä‹ä‹.mlä‹ä‹w?\" . tuareg-mode) auto-mode-alist))\n(autoload 'tuareg-mode \"tuareg\" \"Major mode for editing Caml code\" t)" "(setq auto-mode-alist (cons '(\"ä‹ä‹.mlä‹ä‹w?\" . tuareg-mode) auto-mode-alist))\n(autoload 'tuareg-mode \"tuareg\" \"Major mode for editing Caml code\" t)"))
+(setq kill-ring-yank-pointer (nthcdr 0 kill-ring))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/Users/freedom/ocaml/union.ml"
+  "union.ml"
+  'tuareg-mode
+  '(override-global-mode company-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  312
+  '(314 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (544 550 545 243 76 96 239 241 95 144 145 75 302 22 94 312))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/ocaml/tuple.ml"
+  "tuple.ml"
+  'tuareg-mode
+  '(override-global-mode company-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  87
+  '(25 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (23 1 83 83 85))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/ocaml/fact.ml"
+  "fact.ml"
+  'tuareg-mode
+  '(override-global-mode company-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  77
+  '(84 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (74 73 51 51 51 77))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/OCaml/test.ml"
+  "test.ml"
+  'tuareg-mode
+  '(override-global-mode company-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  111
+  '(1 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (111 111 87 111))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/ocaml/proB6.cpp"
+  "proB6.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  172
+  '(203 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (202 184 173 172 161 84 172 147 187 122 200 113))))
+
+(desktop-create-buffer 208
+  nil
+  "freedom"
+  'dired-mode
+  '(override-global-mode company-mode helm-mode linum-mode global-whitespace-mode yas-minor-mode)
+  23020
+  '(262 nil)
+  t
+  '("/Users/freedom/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/freedom/ocaml/four_times.ml"
+  "four_times.ml"
+  'tuareg-mode
+  '(override-global-mode company-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  62
+  '(62 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (19 62))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/ocaml/distance.ml"
+  "distance.ml"
+  'tuareg-mode
+  '(override-global-mode company-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  1
+  '(40 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (5 1))))
+

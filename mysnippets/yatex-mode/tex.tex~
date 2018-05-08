@@ -1,0 +1,79 @@
+# -*- mode: snippet -*-
+# name: tex
+# key: tex
+# --
+\documentclass[a4paper,10pt]{jsarticle}
+% 余白の設定
+
+\setlength{\textwidth}{\fullwidth}
+\setlength{\textheight}{40\baselineskip}
+\addtolength{\textheight}{\topskip}
+\setlength{\voffset}{-0.2in}
+\setlength{\topmargin}{0pt}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+
+% パッケージ
+\usepackage[dvipdfmx]{graphicx}	% 画像
+\usepackage{amsmath, amssymb}		% ギリシャ文字
+\usepackage{bm}			% 数式
+\usepackage{comment}			% コメント
+\usepackage{siunitx}			% SI単位
+\usepackage{framed}			% 枠組み
+\usepackage[dvipdfmx]{color}
+\usepackage{here}
+
+%ソースコードの引用に関する設定
+\usepackage{listings,jlisting}
+\usepackage{color}
+
+% 設定
+\lstset{
+  breaklines = true,
+  language=C,
+  basicstyle=\ttfamily\scriptsize,
+  commentstyle={\itshape \color[cmyk]{1,0.4,1,0}},
+  classoffset=1,
+  keywordstyle={\bfseries \color[cmyk]{0,1,0,0}},
+  stringstyle={\ttfamily \color[rgb]{0,0,1}},
+  frame=tRBl,
+  framesep=5pt,
+  showstringspaces=false,
+  numbers=left,
+  stepnumber=1,
+  numberstyle=\tiny,
+  tabsize=2,
+}
+
+% 表紙の設定
+\makeatletter
+\def\lst@lettertrue{\let\lst@ifletter\iffalse}
+\def\@thesis{}
+\def\id#1{\def\@id{#1}}
+\def\department#1{\def\@department{#1}}
+
+\def\@maketitle{
+\begin{center}
+{\huge \@thesis \par}
+\vspace{10mm}
+{\LARGE\bf \@title \par}
+\vspace{10mm}
+%{\Large \@date\par}              % 作成日
+%\vspace{20mm}
+{\Large \@department \par}       % 所属
+{\Large 学籍番号\@id \par}
+\vspace{10mm}
+{\large \@author}                % 氏名
+\end{center}
+\par\vskip 1.5em
+}
+
+\input{parts/title}
+
+\begin{document}
+\maketitle
+\newpage
+\input{parts/chapter1}
+\input{parts/chapter2}
+\newpage
+\end{document}

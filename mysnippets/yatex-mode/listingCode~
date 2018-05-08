@@ -1,0 +1,9 @@
+# key: clist
+# name: listingCode
+# --
+\begin{figure}[H]
+\centering 
+\includegraphics[width=15cm]{ $0 }
+\caption{ $1 }
+\label{ $2 }
+\end{figure}

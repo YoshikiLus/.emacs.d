@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: foi
+# key: foi
+# --
+FOR(i,0,N){
+    $0
+}

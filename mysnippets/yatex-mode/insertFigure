@@ -1,0 +1,10 @@
+# key: graph
+# name: insertFigure
+# --
+
+\begin{figure}[H]
+\centering 
+\includegraphics[width=15cm]{parts/}
+\caption{ $0 }
+\label{  }
+\end{figure}

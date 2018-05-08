@@ -1,0 +1,108 @@
+# -*- mode: snippet -*-
+# name: cppmeiro
+# key: cppmeiro
+# --
+
+
+/*
+  #問題：
+  
+  #分析：
+  #オブジェクト：
+  
+  
+  #条件：
+  
+  
+  #要求：
+  
+  
+  #解法：
+  
+  
+*/
+
+
+
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <set>
+#include <map>
+#include <vector>
+#include <list>
+#include <algorithm>
+#include <cstring>
+#include <cmath>
+#include <string>
+#include <queue>
+#include <stack>
+#include <bitset>     //UWAGA - w czasie kompilacji musi byc znany rozmiar wektora - nie mozna go zmienic
+#include <cassert>
+#include <iomanip>        //do setprecision
+#include <ctime>
+#include <complex>
+using namespace std;
+
+#define FOR(i,b,e) for(int i=(b);i<(e);++i)
+#define FORQ(i,b,e) for(int i=(b);i<=(e);++i)
+#define FORD(i,b,e) for(int i=(b)-1;i>=(e);--i)
+#define REP(x, n) for(int x = 0; x < (n); ++x)
+
+#define ST first
+#define ND second
+#define PB push_back
+#define MP make_pair
+#define LL long long
+#define uLL unsigned LL
+#define LD long double
+
+const double pi = 3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342;
+const int mod=1000000007;
+
+using namespace std;
+
+typedef pair<int, int> point_t;
+point_t operator+( point_t &lhs, point_t &rhs)
+{
+  point_t p = make_pair(lhs.first + rhs.first, lhs.second + rhs.second);
+  return p;
+}
+
+bool operator==(point_t &lhs, point_t &rhs)
+{
+  return (lhs.first == rhs.first) && (lhs.second == rhs.second);
+}
+
+bool operator!=(point_t &lhs, point_t &rhs)
+{
+  return (lhs.first != rhs.first) || (lhs.second != rhs.second);
+}
+
+bool is_in_field(int row, int col,  point_t &point){
+  const int r = point.first;
+  const int c = point.second;
+  return (1<= c && c<=col) && (1 <= r && r <= row);
+}
+
+
+int main(void){
+  int R,C;
+  cin>>R>>C;
+
+  int sy,sx,gy,gx;
+  cin>>sy>>sx;
+  cin>>gy>>gx;
+  point_t start=make_pair(sy,sx);
+  point_t goal =make_pair(gy,gx);
+  
+  vector< vector<char> > meiro(R+3,vector<char>(C+3,'0'));
+  vector< vector<int> > memo(R+3,vector<int>(C+3,mod));
+
+  vector<point_t> moves{MP(-1,0),MP(0,1),MP(1,0),MP(0,-1)};
+
+
+  return 0; 
+}

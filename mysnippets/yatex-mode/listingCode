@@ -1,0 +1,9 @@
+# key: clist
+# name: listingCode
+# --
+\begin{figure}[H]
+ \centering 
+ \lstinputlisting{parts/$0}
+ \caption{figure:}
+ \label{figure:}
+\end{figure}

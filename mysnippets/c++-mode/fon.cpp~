@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: fox
+# key: fox
+# --
+FOR(i,0,${1:N}){
+    ${2:}
+}
+

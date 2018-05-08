@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: indent
+# key: indent
+# --
+\setlength{\leftskip}{3.0cm}

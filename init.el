@@ -111,53 +111,6 @@
 ;; 初期画面を表示しない
 (setq inhibit-startup-message t)
 
-;;タブの設定
-;;(require 'tabbar)
-;;(tabbar-mode)
-
-;; Firefoxライクなキーバインドに
-;;(global-set-key [(control tab)]       'tabbar-forward)
-;;(global-set-key [(control shift tab)] 'tabbar-backward)
-;; -nw では効かないので別のキーバインドを割り当てる
-;;(global-set-key (kbd "C-x n") 'tabbar-forward)
-;;(global-set-key (kbd "C-x p") 'tabbar-backward)
-
-;; タブ上でマウスホイールを使うことにしよ
-;;(tabbar-mwheel-mode 1)
-;; グループを使わない
-;;(setq tabbar-buffer-groups-function nil)
-;; 左側のボタンを消す
-;(dolist (btn '(tabbar-buffer-home-button
-;              tabbar-scroll-left-button
-;               tabbar-scroll-right-button))
-;  (set btn (cons (cons "" nil)
-;                 (cons "" nil))))
-;; 色設定
-;;(set-face-attribute ; バー自体の色
-;;  'tabbar-default nil
-;;   :background "gray90"
-;;   :family "Inconsolata"
-;;   :height 1.0)
-;;(set-face-attribute ; アクティブなタブ
-;;  'tabbar-selected nil
-;;   :background "brown40"
-;;   :foreground "white"                  ;
-;;   :weight 'bold
-;;   :box nil)
-;;(set-face-attribute ; 非アクティブなタブ
-;;  'tabbar-unselected nil
-;;   :background "gray90"
-;;   :foreground "black"
-;;   :box nil)
-
-
-;; 幅設定
-;;  (set-face-attribute
-;;   'tabbar-separator nil
-;;   :height 0.7)
-;;
-
-
 ;; tabbarの設定
 ;;
 (require 'tabbar)
@@ -165,7 +118,7 @@
 
 (tabbar-mwheel-mode nil)                  ;; マウスホイール無効
 (setq tabbar-buffer-groups-function nil)  ;; グループ無効
-(setq tabbar-use-images nil)              ;; 画像を使わない
+;;(setq tabbar-use-images nil)              ;; 画像を使わない
 
 
 ;;----- キーに割り当てる
@@ -196,19 +149,23 @@
  :family "MeiryoKe_Gothic"
  :background "black"
  :foreground "white"
- :box nil
  )
 (set-face-attribute
  'tabbar-selected nil
  :background "#ff5f00"
  :foreground "brightwhite"
- :box nil
+ )
+(set-face-attribute
+ 'tabbar-unselected nil
+ :background "black"
+ :foreground "white"
+ :box '(:line-width 2 :color "red")
  )
 (set-face-attribute
  'tabbar-separator nil
  :background "gray"
  :foreground "gray"
- :box nil
+ ;;:box '(:line-width 2 :color "red")
  )
 ;(set-face-attribute
 ; 'tabbar-modified nil
@@ -219,51 +176,105 @@
 
 (when window-system                       ; GUI時
   ;; 外観変更
+  ;;設定2
   (set-face-attribute
    'tabbar-default nil
    :family "MeiryoKe_Gothic"
    :background "#34495E"
    :foreground "#EEEEEE"
-   :height 0.85
-   )
+   :box '(:line-width 1 :color "gray20" :style nil))
+  
   (set-face-attribute
    'tabbar-unselected nil
-   :family "Meiryoke_Gothic"
-   :background "black"
+   :background "gray30"
    :foreground "white"
-   :box nil
-   )
-  ;; (set-face-attribute
-  ;;  'tabbar-unselected nil
-  ;;  :background "#34495E"
-  ;;  :foreground "#EEEEEE"
-  ;;  :box nil
-  ;; )
-;  (set-face-attribute
-;   'tabbar-modified nil
-;   :background "#E67E22"
-;   :foreground "#EEEEEE"
-;   :box nil
-;  )
-  (set-face-attribute
-   'tabbar-separator nil
-   :background "gray"
-   :foreground "gray"
-   )
+   :box '(:line-width 5 :color "gray30" :style nil))
+  
   (set-face-attribute
    'tabbar-selected nil
-   :background "#E74C3C"
+   :background "blue"
    :foreground "#EEEEEE"
-   :box nil)
+   :box '(:line-width 1 :color "gray75" :style nil))
+  
+  (set-face-attribute
+   'tabbar-highlight nil
+   :background "white"
+   :foreground "black"
+   :underline nil
+   :box '(:line-width 5 :color "white" :style nil))
+  
   (set-face-attribute
    'tabbar-button nil
-   :box nil)
+   :box '(:line-width 1 :color "gray20" :style nil))
+  
   (set-face-attribute
    'tabbar-separator nil
-   :height 2.0)
-)
+   :background "gray20"
+   :height 0.6)
 
-;;----- 表示するバッファ
+
+  ;;設定1
+  ;; (set-face-attribute
+  ;;  'tabbar-default nil
+  ;;  :family "MeiryoKe_Gothic"
+  ;;  :background "#34495E"
+  ;;  :foreground "#EEEEEE"
+  ;;  :height 0.85
+  ;;  ;; :box '(:line-width 2 :color "white")
+  ;;  )
+  ;; (set-face-attribute
+  ;;  'tabbar-unselected nil
+  ;;  :family "Meiryoke_Gothic"
+  ;;  :background "black"
+  ;;  :foreground "white"
+  ;;  :box '(:line-width 2 :color "white")
+  ;;  :box nil
+  ;;  )
+  ;; (set-face-attribute
+  ;;  'tabbar-separator nil
+  ;;  :background "gray"
+  ;;  :foreground "gray"
+  ;;  :box '(:line-width 2 :color "white")
+  ;;  )
+  ;; (set-face-attribute
+  ;;  'tabbar-selected nil
+  ;;  :background "#E74C3C"
+  ;;  :foreground "#EEEEEE"
+  ;;  :box '(:line-width 2 :color "white")
+  ;;  :box nil)
+  ;; (set-face-attribute
+  ;;  'tabbar-button nil
+  ;;  :box nil)
+  ;; (set-face-attribute
+  ;;  'tabbar-separator nil
+  ;;  :height 2.0)
+  )
+
+
+;; Change padding of the tabs
+;; we also need to set separator to avoid overlapping tabs by highlighted tabs
+;; (custom-set-variables
+;; (custom-set-variables
+;;  '(tabbar-separator (quote (0.5))))
+;; ;; adding spaces
+;; (defun tabbar-buffer-tab-label (tab)
+;;   "Return a label for TAB.
+;; That is, a string used to represent it on the tab bar."
+;;   (let ((label  (if tabbar--buffer-show-groups
+;;                     (format "[%s]  " (tabbar-tab-tabset tab))
+;;                   (format "%s  " (tabbar-tab-value tab)))))
+;;     ;; Unless the tab bar auto scrolls to keep the selected tab
+;;     ;; visible, shorten the tab label to keep as many tabs as possible
+;;     ;; in the visible area of the tab bar.
+;;     (if tabbar-auto-scroll-flag
+;;         label
+;;       (tabbar-shorten
+;;        label (max 1 (/ (window-width)
+;;                        (length (tabbar-view
+;; (tabbar-current-tabset)))))))))
+
+
+;;----- タブに表示するバッファの設定
 (defun my-tabbar-buffer-list ()
   (delq nil
         (mapcar #'(lambda (b)

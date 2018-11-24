@@ -1,0 +1,37 @@
+# -*- mode: snippet -*-
+# name: timemeasure
+# key: timemeasure
+# --
+  struct timespec res,tp1,tp2;
+  long sec,nsec;
+
+  // 時刻精度の確認
+  clock_getres(CLOCK_REALTIME,&res);  
+  //Time Precision の出力
+  printf("Time Precision:\t%ld.%09ld\n", (long)res.tv_sec, res.tv_nsec);
+
+  //測定開始
+  clock_gettime(CLOCK_REALTIME,&tp1);
+
+  // 処理時間を計測したいコードをここに記述
+  // （開始）
+
+
+
+  usleep(100000);
+
+
+
+  // 終了
+  clock_gettime(CLOCK_REALTIME,&tp2);
+
+  sec = tp2.tv_sec - tp1.tv_sec;
+  nsec = tp2.tv_nsec - tp1.tv_nsec;
+
+  if(nsec < 0){
+    sec--;
+    nsec += 1000000000L;
+  }
+  //Time Span の出力
+  printf("Time Span:\t%ld.%09ld\n",sec,nsec);
+  printf("Time Span2:\t %ld . %09ld \n",sec, nsec);

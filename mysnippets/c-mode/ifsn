@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: ifsn
+# key: ifsn
+# --
+if($0){
+  $1
+}else{
+  $2
+}

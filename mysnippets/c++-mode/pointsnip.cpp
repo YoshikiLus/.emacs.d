@@ -9,6 +9,13 @@ point_t operator+( point_t &lhs, point_t &rhs)
   return p;
 }
 
+point_t operator-( point_t &lhs, point_t &rhs)
+{
+  point_t p = make_pair(lhs.first - rhs.first, lhs.second - rhs.second);
+  return p;
+}
+
+
 bool operator==(point_t &lhs, point_t &rhs)
 {
   return (lhs.first == rhs.first) && (lhs.second == rhs.second);

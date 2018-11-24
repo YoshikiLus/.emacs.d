@@ -1,0 +1,357 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Mon Jul 16 22:00:56 2018
+;; Desktop file format version 208
+;; Emacs version 25.3.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (23372 38664 206240 0) (desktop . "208") "freedom@freedoms-MacBook-Air.local" nil nil ((((font-backend mac-ct) (fontsize . 0) (font . "-*-Menlo-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 2) (vertical-scroll-bars . right) (horizontal-scroll-bars) (foreground-color . "gray80") (background-color . "#181a26") (line-spacing) (left-fringe . 8) (right-fringe . 8) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 15) (scroll-bar-height . 0) (alpha) (fullscreen) (display-type . color) (background-mode . dark) (cursor-color . "green") (powerline-cache) (frameset--id . "8069-3402-AC0E-84B5") (frameset--mini t . t) (height . 60) (width . 97) (modeline . t) (minibuffer . t) (unsplittable) (left . 0) (top . 23) (right-divider-width . 0) (bottom-divider-width . 0) (icon-name) (visibility . t) (display . "freedoms-MacBook-Air.local") (explicit-name) (tool-bar-position . top)) ((min-height . 8) (min-width . 10) (min-height-ignore . 8) (min-width-ignore . 9) (min-height-safe . 2) (min-width-safe . 2) (min-pixel-height . 112) (min-pixel-width . 70) (min-pixel-height-ignore . 112) (min-pixel-width-ignore . 63) (min-pixel-height-safe . 28) (min-pixel-width-safe . 14)) vc (pixel-width . 710) (pixel-height . 826) (total-width . 101) (total-height . 59) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 710) (pixel-height . 406) (total-width . 101) (total-height . 29) (normal-height . 0.5) (normal-width . 1.0) (buffer "stringSplit.cpp" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins 2) (scroll-bars nil 3 t nil 0 nil) (vscroll . 0) (dedicated) (point . 223) (start . 1))) (leaf (last . t) (pixel-width . 710) (pixel-height . 420) (total-width . 101) (total-height . 30) (normal-height . 0.5) (normal-width . 1.0) (buffer "2017_B.cpp" (selected) (hscroll . 0) (fringes 8 8 nil) (margins 2) (scroll-bars nil 3 t nil 0 nil) (vscroll . 0) (dedicated) (point . 1374) (start . 1082)))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("shell" "modi" "display" "Astar" "mod" "9" "bash" "poi" "eva" "point" "poi" "pri" "return" "moves" "const" "prio"))
+(setq regexp-search-ring nil)
+(setq register-alist '((51 file-query "/Users/freedom/Documents/4_zenki/’¿Í’¹©’ÃÎ’Ç½A/kadai/chapter1.tex" 1579)))
+(setq file-name-history '("~/.emacs.d/init.el" "~/ICPC/2017_A.cpp" "~/Documents/4_zenki/’¿Í’¹©’ÃÎ’Ç½A/kadai/chapter1.tex" "~/Documents/4_zenki/’¿Í’¹©’ÃÎ’Ç½A/kadai/thesis.tex" "~/coder/007_C.cpp" "~/tansaku/greedy_complete.cpp" "~/coder/typical/001_A.cpp" "~/OCaml/map.ml" "~/TopCoder/roadAndJunctions/RoadsAndJunctions.cpp" "~/TopCoder/MapRecoloring/MapRecoloring.cpp" "~/coder/20180505/#D.cpp#"))
+(setq kill-ring '("std::vector<std::string> StringSplit(const std::string &str, char sep)\n{\n    std::vector<std::string> v;\n    std::stringstream ss(str);\n    std::string buffer;\n    while( std::getline(ss, buffer, sep) ) {\n        v.push_back(buffer);\n    }\n    return v;\n}\n" "#include <string> // std::string, std::char_traits\n#include <vector> // std::vector\n\ntemplate<class T> std::vector<std::string> split(const std::string& s, const T& separator, bool ignore_empty = 0, bool split_empty = 0) {\n  struct {\n    auto len(const std::string&             s) { return s.length(); }\n    auto len(const std::string::value_type* p) { return p ? std::char_traits<std::string::value_type>::length(p) : 0; }\n    auto len(const std::string::value_type  c) { return c == std::string::value_type() ? 0 : 1; /*return 1;*/ }\n  } util;\n  \n  if (s.empty()) { /// empty string ///\n    if (!split_empty || util.len(separator)) return {\"\"};\n    return {};\n  }\n  \n  auto v = std::vector<std::string>();\n  auto n = static_cast<std::string::size_type>(util.len(separator));\n  if (n == 0) {    /// empty separator ///\n    if (!split_empty) return {s};\n    for (auto&& c : s) v.emplace_back(1, c);\n    return v;\n  }\n  \n  auto p = std::string::size_type(0);\n  while (1) {      /// split with separator ///\n    auto pos = s.find(separator, p);\n    if (pos == std::string::npos) {\n      if (ignore_empty && p - n + 1 == s.size()) break;\n      v.emplace_back(s.begin() + p, s.end());\n      break;\n    }\n    if (!ignore_empty || p != pos)\n      v.emplace_back(s.begin() + p, s.begin() + pos);\n    p = pos + n;\n  }\n  return v;\n}" "#include <string> // std::string, std::char_traits\n#include <vector> // std::vector\n\ntemplate<class T> std::vector<std::string> split(const std::string& s, const T& separator, bool ignore_empty = 0, bool split_empty = 0) {\n  struct {\n    auto len(const std::string&             s) { return s.length(); }\n    auto len(const std::string::value_type* p) { return p ? std::char_traits<std::string::value_type>::length(p) : 0; }\n    auto len(const std::string::value_type  c) { return c == std::string::value_type() ? 0 : 1; /*return 1;*/ }\n  } util;\n  \n  if (s.empty()) { /// empty string ///\n    if (!split_empty || util.len(separator)) return {\"\"};\n    return {};\n  }\n  \n  auto v = std::vector<std::string>();\n  auto n = static_cast<std::string::size_type>(util.len(separator));\n  if (n == 0) {    /// empty separator ///\n    if (!split_empty) return {s};\n    for (auto&& c : s) v.emplace_back(1, c);\n    return v;\n  }\n  \n  auto p = std::string::size_type(0);\n  while (1) {      /// split with separator ///\n    auto pos = s.find(separator, p);\n    if (pos == std::string::npos) {\n      if (ignore_empty && p - n + 1 == s.size()) break;\n      v.emplace_back(s.begin() + p, s.end());\n      break;\n    }\n    if (!ignore_empty || p != pos)\n      v.emplace_back(s.begin() + p, s.begin() + pos);\n    p = pos + n;\n  }\n  return v;\n}" "std::vector<std::string> StringSplit(const std::string &str, char sep)\n{\n    std::vector<std::string> v;\n    std::stringstream ss(str);\n    std::string buffer;\n    while( std::getline(ss, buffer, sep) ) {\n        v.push_back(buffer);\n    }\n    return v;\n}" "outp" "3 45\n10 20 30\n6 10\n1 2 5 8 9 11\n7 100\n11 34 83 47 59 29 70\n4 100\n80 70 60 50\n4 20\n10 5 10 16\n0 0" "4 20\n10 5 10 16" "4 100\n80 70 60 50" "4 100\n80 70 60 50\nx: 150  x: 140  x: 130  x: 130  x: 120  x: 110  \n-1222435995\nbash-4.4$ 7 100\n11 34 83 47 59 29 70\nbash: 7: command not found\nbash-4.4$ bash: 11: command not found\nbash-4.4$ g++ 2017_A.cpp\nbash-4.4$ ./a.out\n7 100\n11 34 83 47 59 29 70\nx: 153  x: 142  x: 130  x: 129  x: 117  x: 117  x: 112  x: 106  x: 104  x: 99  x: 94  x: 93  x: 88  x: 81  x: 81  x: 76  x: 70  x: 63  x: 58  x: 45  x: 40  \n99\nbash-4.4$ ./a.out\n" "4 100\n80 70 60 50\nx: 150  x: 140  x: 130  x: 130  x: 120  x: 110  \n-1222435995\nbash-4.4$ 7 100\n11 34 83 47 59 29 70\nbash: 7: command not found\nbash-4.4$ bash: 11: command not found\nbash-4.4$ g++ 2017_A.cpp\nbash-4.4$ ./a.out\n7 100\n11 34 83 47 59 29 70\nx: 153  x: 142  x: 130  x: 129  x: 117  x: 117  x: 112  x: 106  x: 104  x: 99  x: 94  x: 93  x: 88  x: 81  x: 81  x: 76  x: 70  x: 63  x: 58  x: 45  x: 40  \n99\nbash-4.4$ ./a.out" "4 100\n80 70 60 50" "7 100\n11 34 83 47 59 29 70" "6 10\n1 2 5 8 9 11" "3 45\n10 20 30" "                     ((equal \"*shell*<4>\" (buffer-name b)) b) ;*shell*’¥Ð’¥Ã’¥Õ’¥¡’¤â’É½’¼¨’¤¹’¤ë" "  if(productt[])" "    productt[i]" "  productt[i]" "..........\n.......S..\n..........\n..........\n....#.....\n..........\n...####...\n..........\n.G........\n..........\nStart: (2,8)\nGoal:(9,2)\n13\nYes\n9999999999\n9999999199\n9999991199\n9999911999\n9999919999\n9911119999\n9919999999\n9119999999\n9199999999\n9999999999\n\n0 milli sec" "..G#......\n......###.\n.###.#....\n..#....#..\n..#.#.....\n..#....##.\n..........\n..###.....\n......###.\n..#.....S.\nStart: (10,9)\nGoal:(1,3)\n15\nYes\n9919999999\n9911199999\n9999199999\n9999119999\n9999919999\n9999919999\n9999919999\n9999919999\n9999919999\n9999911119\n\n0 milli sec" "......G......\n.............\n...#######...\n.............\n.............\n.............\n.............\n.............\n.............\n......S......\n.............\nStart: (10,7)\nGoal:(1,7)\n17\nYes\n9999911999999\n9911119999999\n9919999999999\n9911111111999\n9999111119999\n9999911199999\n9999991999999\n9999991999999\n9999991999999\n9999991999999\n9999999999999\n\n0 milli sec" "..........\n.......S..\n..........\n..........\n....#.....\n..........\n...####...\n..........\n.G........\n..........\nStart: (2,8)\nGoal:(9,2)\n13\nYes\n9999999999\n9999999199\n9999991199\n9999911999\n9999919999\n9911119999\n9919999999\n9119999999\n9199999999\n9999999999\n\n0 milli sec" "......G......\n.............\n...#######...\n.............\n.............\n.............\n.............\n.............\n.............\n......S......\n.............\nStart: (10,7)\nGoal:(1,7)\n17\nYes\n9999911999999\n9911119999999\n9919999999999\n9911111111999\n9999111119999\n9999911199999\n9999991999999\n9999991999999\n9999991999999\n9999991999999\n9999999999999\n\n0 milli sec\n" "..G#......\n......###.\n.###.#....\n..#....#..\n..#.#.....\n..#....##.\n..........\n..###.....\n......###.\n..#.....S.\nStart: (10,9)\nGoal:(1,3)\n15\nYes\n9919999999\n9911199999\n9999199999\n9999119999\n9999919999\n9999919999\n9999919999\n9999919999\n9999919999\n9999911119\n\n0 milli sec\n" "..........\n.......S..\n..........\n..........\n....#.....\n..........\n...####...\n..........\n.G........\n..........\nStart: (2,8)\nGoal:(9,2)\n13\nYes\n9999999999\n9999999199\n9999991199\n9999911999\n9999919999\n9911119999\n9919999999\n9119999999\n9199999999\n9999999999\n\n0 milli sec" "abs(pG.ST-px.ST)" "abs(pG.ND-px.ND)" "abs(pG.ST-px.ST)" "abs(pG.ND-px.ND)" " ((equal \"*shell*\" (buffer-name b)) b) ;*shell*’¥Ð’¥Ã’¥Õ’¥¡’¤â’É½’¼¨’¤¹’¤ë" "            auto Mend = std::chrono::system_clock::now();       // ’·×’Â¬’½ª’Î»’»þ’¹ï’¤ò’ÊÝ’Â¸\n            auto dur = Mend - Mstart;        // ’Í×’¤·’¤¿’»þ’´Ö’¤ò’·×’»»\n            auto msec = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();\n            // ’Í×’¤·’¤¿’»þ’´Ö’¤ò’¥ß’¥ê’ÉÃ’¡Ê1/1000’ÉÃ’¡Ë’¤Ë’ÊÑ’´¹’¤·’¤Æ’É½’¼¨\n            cout <<endl<< msec << \" milli sec\"<<endl;" "bash-4.4$ ./a.out <input3.txt\n..........\n.......S..\n..........\n..........\n....#.....\n..........\n...####...\n..........\n.G........\n..........\nStart: (2,8)\nGoal:(9,2)\nYes\n9999999099\n9999990109\n9999901109\n9999011099\n9900910999\n9011110999\n9019999999\n9110999999\n9109999999\n9999999999\n\n0 milli sec\n" "bash-4.4$ ./a.out < input3.txt\n..........\n.......S..\n..........\n..........\n....#.....\n..........\n...####...\n..........\n.G........\n..........\nStart: (2,8)\nGoal:(9,2)\nmodifiedE\n13\nYes\n9999999999\n9111111199\n9111111199\n9111111199\n9111911199\n9111911199\n9119999199\n9199999999\n9199999999\n9999999999\n" "          stc.push(MP(AstarEval(next,memo[next.ST][next.ND]),next));" "int AstarEval(point_t px,int gcost){  \n  return (abs(pG.ND-px.ND)+abs(pG.ST-px.ST)) + gcost;\n" "#include <cstdio>\n#include <cstdlib>\n#include <iostream>\n#include <fstream>\n#include <sstream>\n#include <set>\n#include <map>\n#include <vector>\n#include <list>\n#include <algorithm>\n#include <cstring>\n#include <cmath>\n#include <string>\n#include <queue>\n#include <stack>\n#include <numeric>\n#include <bitset>     //UWAGA - w czasie kompilacji musi byc znany rozmiar wektora - nie mozna go zmienic\n#include <cassert>\n#include <iomanip>        //do setprecision\n#include <ctime>\n#include <complex>\nusing namespace std;\n\n#define FOR(i,b,e) for(int i=(b);i<(e);++i)\n#define FORQ(i,b,e) for(int i=(b);i<=(e);++i)\n#define FORD(i,b,e) for(int i=(b)-1;i>=(e);--i)\n#define REP(x, n) for(int x = 0; x < (n); ++x)\n\n#define ST first\n#define ND second\n#define PB push_back\n#define MP make_pair\n#define LL long long\n#define uLL unsigned LL\n#define LD long double\n\nconst double pi = 3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342;\nconst int mod=1000000007;\n\nusing namespace std;\n\ntypedef pair<int, int> point_t;\ntypedef pair<int,point_t> node_t;\n\npoint_t operator+( point_t &lhs, point_t &rhs)\n{\n  point_t p = make_pair(lhs.first + rhs.first, lhs.second + rhs.second);\n  return p;\n}\n\npoint_t operator-( point_t &lhs, point_t &rhs)\n{\n  point_t p = make_pair(lhs.first - rhs.first, lhs.second - rhs.second);\n  return p;\n}\n\n\nbool operator==(point_t &lhs, point_t &rhs)\n{\n  return (lhs.first == rhs.first) && (lhs.second == rhs.second);\n}\n\nbool operator!=(point_t &lhs, point_t &rhs)\n{\n  return (lhs.first != rhs.first) || (lhs.second != rhs.second);\n}\n\n\nbool is_in_field(int row, int col,  point_t &point){\n  const int r = point.first;\n  const int c = point.second;\n  return (1<= c && c<=col) && (1 <= r && r <= row);\n}\n\n\nint AstarEval(point_t,int);\n\npoint_t pS;\npoint_t pG;\n\n\nint main(void){\n  int C,R;\n  cin>>C;\n  cin>>R;\n  char meiro[R+3][C+3];\n  vector<vector<int> >  display(R+3,vector<int>(C+3,9) );\n\n  vector<point_t> moves={MP(-1,0),MP(0,1),MP(1,0),MP(0,-1)};\n  vector< vector<int> > memo(R+3,vector<int>(C+3,mod));\n  \n\n  \n  FORQ(i,1,R){\n    FORQ(j,1,C){\n      cin>>meiro[i][j];\n      if(meiro[i][j]=='S'){\n        pS.ST=i;\n        pS.ND=j;\n      }else if(meiro[i][j]=='G'){\n        pG.ST=i;\n        pG.ND=j;\n      }\n    }\n  }\n  \n  FORQ(i,1,R){\n    FORQ(j,1,C){\n      cout<<meiro[i][j];\n    }\n    cout<<endl;\n  }\n  \n  cout<< \"Start: \" << \"(\" << pS.ST << \",\" << pS.ND<<\")\"<<endl;\n  cout<<\"Goal:\"<<\"(\"<<pG.ST<<\",\"<<pG.ND <<\")\"<<endl;\n\n\n  auto Mstart = std::chrono::system_clock::now();\n  \n  priority_queue< node_t, vector<node_t>,greater<node_t> > stc;\n\n  stc.push(MP(AstarEval(pS,0),pS));\n  memo[pS.ST][pS.ND]=0;\n\n  \n  while(!stc.empty()){\n    node_t cur =  stc.top(); stc.pop();\n    display[cur.ND.ST][cur.ND.ND]=1;\n    \n    for(auto x: moves){\n      point_t next = cur.ND + x;\n      if(is_in_field(R,C,next)) {\n        if(meiro[next.ST][next.ND]!='#' && memo[next.ST][next.ND]==mod) {\n          memo[next.ST][next.ND] = memo[cur.ND.ST][cur.ND.ND]+1;\n          stc.push(MP(AstarEval(next,memo[next.ST][next.ND]),next));\n          if(next==pG) {\n            cout<<\"modifiedE\"<<endl;\n            display[next.ST][next.ND]=1;\n            cout<<memo[next.ST][next.ND]<<endl;\n            cout<<\"Yes\"<<endl;\n            FORQ(i,1,R){\n              FORQ(j,1,C){\n                cout<<display[i][j];\n              }\n              cout<<endl;\n            }\n              \n            auto Mend = std::chrono::system_clock::now();       // ’·×’Â¬’½ª’Î»’»þ’¹ï’¤ò’ÊÝ’Â¸\n            auto dur = Mend - Mstart;        // ’Í×’¤·’¤¿’»þ’´Ö’¤ò’·×’»»\n            auto msec = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();\n            // ’Í×’¤·’¤¿’»þ’´Ö’¤ò’¥ß’¥ê’ÉÃ’¡Ê1/1000’ÉÃ’¡Ë’¤Ë’ÊÑ’´¹’¤·’¤Æ’É½’¼¨\n            cout <<endl<< msec << \" milli sec\"<<endl;\n            return 0;\n          }\n        }\n      }\n    }\n    \n  }\n\n\n  auto Mend = std::chrono::system_clock::now();       // ’·×’Â¬’½ª’Î»’»þ’¹ï’¤ò’ÊÝ’Â¸\n  auto dur = Mend - Mstart;        // ’Í×’¤·’¤¿’»þ’´Ö’¤ò’·×’»»\n  auto msec = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();\n  // ’Í×’¤·’¤¿’»þ’´Ö’¤ò’¥ß’¥ê’ÉÃ’¡Ê1/1000’ÉÃ’¡Ë’¤Ë’ÊÑ’´¹’¤·’¤Æ’É½’¼¨\n  cout <<endl<< msec << \" milli sec\"<<endl;\n  return -1;\n}\n\nint AstarEval(point_t px,int gcost){  \n  return (abs(pG.ND-px.ND)+abs(pG.ST-px.ST)) + gcost;\n}\n" "bash-4.4$ ./a.out < input2.txt\n..G#......\n......###.\n.###.#....\n..#....#..\n..#.#.....\n..#....##.\n..........\n..###.....\n......###.\n..#.....S.\nStart: (10,9)\nGoal:(1,3)\nmodifiedE\n15\nYes\n9919199999\n9911199999\n9999199999\n9999119999\n9999919999\n9999919999\n9999919999\n9999919999\n9999919999\n9999911119\n" "#include <cstdio>\n#include <cstdlib>\n#include <iostream>\n#include <fstream>\n#include <sstream>\n#include <set>\n#include <map>\n#include <vector>\n#include <list>\n#include <algorithm>\n#include <cstring>\n#include <cmath>\n#include <string>\n#include <queue>\n#include <stack>\n#include <numeric>\n#include <bitset>     //UWAGA - w czasie kompilacji musi byc znany rozmiar wektora - nie mozna go zmienic\n#include <cassert>\n#include <iomanip>        //do setprecision\n#include <ctime>\n#include <complex>\nusing namespace std;\n\n#define FOR(i,b,e) for(int i=(b);i<(e);++i)\n#define FORQ(i,b,e) for(int i=(b);i<=(e);++i)\n#define FORD(i,b,e) for(int i=(b)-1;i>=(e);--i)\n#define REP(x, n) for(int x = 0; x < (n); ++x)\n\n#define ST first\n#define ND second\n#define PB push_back\n#define MP make_pair\n#define LL long long\n#define uLL unsigned LL\n#define LD long double\n\nconst double pi = 3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342;\nconst int mod=1000000007;\n\nusing namespace std;\n\ntypedef pair<int, int> point_t;\ntypedef pair<int,point_t> node_t;\n\npoint_t operator+( point_t &lhs, point_t &rhs)\n{\n  point_t p = make_pair(lhs.first + rhs.first, lhs.second + rhs.second);\n  return p;\n}\n\npoint_t operator-( point_t &lhs, point_t &rhs)\n{\n  point_t p = make_pair(lhs.first - rhs.first, lhs.second - rhs.second);\n  return p;\n}\n\n\nbool operator==(point_t &lhs, point_t &rhs)\n{\n  return (lhs.first == rhs.first) && (lhs.second == rhs.second);\n}\n\nbool operator!=(point_t &lhs, point_t &rhs)\n{\n  return (lhs.first != rhs.first) || (lhs.second != rhs.second);\n}\n\n\nbool is_in_field(int row, int col,  point_t &point){\n  const int r = point.first;\n  const int c = point.second;\n  return (1<= c && c<=col) && (1 <= r && r <= row);\n}\n\n\nint greedyEval(point_t);\n\npoint_t pS;\npoint_t pG;\n\n\nint main(void){\n  int C,R;\n  cin>>C;\n  cin>>R;\n  char meiro[R+3][C+3];\n\n  vector<point_t> moves={MP(-1,0),MP(0,1),MP(1,0),MP(0,-1)};\n  vector< vector<int> > memo(R+3,vector<int>(C+3,9));\n  \n\n  \n  FORQ(i,1,R){\n    FORQ(j,1,C){\n      cin>>meiro[i][j];\n      if(meiro[i][j]=='S'){\n        pS.ST=i;\n        pS.ND=j;\n      }else if(meiro[i][j]=='G'){\n        pG.ST=i;\n        pG.ND=j;\n      }\n    }\n  }\n  \n  FORQ(i,1,R){\n    FORQ(j,1,C){\n      cout<<meiro[i][j];\n    }\n    cout<<endl;\n  }\n  \n  cout<< \"Start: \" << \"(\" << pS.ST << \",\" << pS.ND<<\")\"<<endl;\n  cout<<\"Goal:\"<<\"(\"<<pG.ST<<\",\"<<pG.ND <<\")\"<<endl;\n\n\n  auto Mstart = std::chrono::system_clock::now();\n  \n  priority_queue< node_t, vector<node_t>,greater<node_t> > stc;\n\n  stc.push(MP(greedyEval(pS),pS));\n  memo[pS.ST][pS.ND]=0;\n\n  \n  while(!stc.empty()){\n    node_t cur =  stc.top(); stc.pop();\n    memo[cur.ND.ST][cur.ND.ND]=1;\n    for(auto x: moves){\n      point_t next = cur.ND + x;\n      if(is_in_field(R,C,next)) {\n        if(meiro[next.ST][next.ND]!='#' && memo[next.ST][next.ND]==9) {\n          stc.push(MP(greedyEval(next),next));\n          memo[next.ST][next.ND] =0;\n          if(next==pG) {\n            memo[next.ST][next.ND]=1;\n            cout<<\"Yes\"<<endl;\n            FORQ(i,1,R){\n              FORQ(j,1,C){\n                cout<<memo[i][j];\n              }\n              cout<<endl;\n            }\n              \n            auto Mend = std::chrono::system_clock::now();       // ’·×’Â¬’½ª’Î»’»þ’¹ï’¤ò’ÊÝ’Â¸\n            auto dur = Mend - Mstart;        // ’Í×’¤·’¤¿’»þ’´Ö’¤ò’·×’»»\n            auto msec = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();\n            // ’Í×’¤·’¤¿’»þ’´Ö’¤ò’¥ß’¥ê’ÉÃ’¡Ê1/1000’ÉÃ’¡Ë’¤Ë’ÊÑ’´¹’¤·’¤Æ’É½’¼¨\n            cout <<endl<< msec << \" milli sec\"<<endl;\n            return 0;\n          }\n        }\n      }\n    }\n    \n  }\n\n\n  auto Mend = std::chrono::system_clock::now();       // ’·×’Â¬’½ª’Î»’»þ’¹ï’¤ò’ÊÝ’Â¸\n  auto dur = Mend - Mstart;        // ’Í×’¤·’¤¿’»þ’´Ö’¤ò’·×’»»\n  auto msec = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();\n  // ’Í×’¤·’¤¿’»þ’´Ö’¤ò’¥ß’¥ê’ÉÃ’¡Ê1/1000’ÉÃ’¡Ë’¤Ë’ÊÑ’´¹’¤·’¤Æ’É½’¼¨\n  cout <<endl<< msec << \" milli sec\"<<endl;\n  return -1;\n}\n\nint greedyEval(point_t px){\n  return abs(pG.ND-px.ND)*abs(pG.ND-px.ND)+abs(pG.ST-px.ST)*abs(pG.ST-px.ST);\n}\n" "..........\n.......S..\n..........\n..........\n....#.....\n..........\n...####...\n..........\n.G........\n..........\nStart: (2,8)\nGoal:(9,2)\nmodifiedE\n13\nYes\n9999999999\n9111111199\n9111111199\n9111111199\n9111911199\n9111911199\n9119999199\n9199999999\n9199999999\n9999999999\n\n0 milli sec" "..G#......\n......###.\n.###.#....\n..#....#..\n..#.#.....\n..#....##.\n..........\n..###.....\n......###.\n..#.....S.\nStart: (10,9)\nGoal:(1,3)\nmodifiedE\n15\nYes\n9919199999\n9911199999\n9999199999\n9999119999\n9999919999\n9999919999\n9999919999\n9999919999\n9999919999\n9999911119\n\n0 milli sec" "......G......\n.............\n...#######...\n.............\n.............\n.............\n.............\n.............\n.............\n......S......\n.............\nStart: (10,7)\nGoal:(1,7)\nmodifiedE\n17\nYes\n9911111999999\n9919999999999\n9919999999999\n9911111111999\n9991111111999\n9991111111999\n9991111111999\n9991111111999\n9991111111999\n9991111111999\n9999111119999\n\n0 milli sec" "Astar.cpp" "\n" "..........\n.......S..\n..........\n..........\n....#.....\n..........\n...####...\n..........\n.G........\n..........\nStart: (2,8)\nGoal:(9,2)\nYes\n9999999099\n9999990109\n9999901109\n9999011099\n9900910999\n9011110999\n9019999999\n9110999999\n9109999999\n9999999999\n\n0 milli sec" "..G#......\n......###.\n.###.#....\n..#....#..\n..#.#.....\n..#....##.\n..........\n..###.....\n......###.\n..#.....S.\nStart: (10,9)\nGoal:(1,3)\nYes\n9919099999\n9911109999\n9999199999\n9990110999\n9999910999\n9999010999\n9999010999\n9999910999\n9999019999\n9999011110\n\n0 milli sec" "......G......\n.............\n...#######...\n.............\n.............\n.............\n.............\n.............\n.............\n......S......\n.............\nStart: (10,7)\nGoal:(1,7)\nYes\n9900011999999\n9011110999999\n9019999999999\n9011111111099\n9900111110999\n9999001009999\n9999901099999\n9999901099999\n9999901099999\n9999901099999\n9999990999999\n\n0 milli sec" "\\lstinputlisting{./greedy_complete.cpp}" "\n\\par\n’¤½’¤Î’¼Â’¹Ô’·ë’²Ì’¤È’¡¤’¤½’¤ì’¤¾’¤ì’¤Î’¼Â’¹Ô’·ë’²Ì’¤Ë’¤Ä’¤¤’¤Æ’¤Î’Æþ’ÎÏ’¤ò’²¼’¤Ë’¼¨’¤¹’¡¥\n\n\n’Æþ’ÎÏ\n\\begin{lstlisting}\n" "abs(pG.ST-px.ST)" "abs(pG.ND-px.ND)" "          stc.push(MP(AstarEval(next,memo[cur.ND.ST][cur.ND.ND]),next));" "    memo[cur.ND.ST][cur.ND.ND]=1;" "            memo[next.first][next.second]=memo[cur.first][cur.second]+1;" "int greedyEval(point_t px){\n  \n  return (abs(pG.ND-px.ND)+abs(pG.ST-px.ST)) + (abs(px.ST-pS.ST)+abs(px.ND-ps.ND));\n}\n" "#include <cstdio>\n#include <cstdlib>\n#include <iostream>\n#include <fstream>\n#include <sstream>\n#include <set>\n#include <map>\n#include <vector>\n#include <list>\n#include <algorithm>\n#include <cstring>\n#include <cmath>\n#include <string>\n#include <queue>\n#include <stack>\n#include <numeric>\n#include <bitset>     //UWAGA - w czasie kompilacji musi byc znany rozmiar wektora - nie mozna go zmienic\n#include <cassert>\n#include <iomanip>        //do setprecision\n#include <ctime>\n#include <complex>\nusing namespace std;\n\n#define FOR(i,b,e) for(int i=(b);i<(e);++i)\n#define FORQ(i,b,e) for(int i=(b);i<=(e);++i)\n#define FORD(i,b,e) for(int i=(b)-1;i>=(e);--i)\n#define REP(x, n) for(int x = 0; x < (n); ++x)\n\n#define ST first\n#define ND second\n#define PB push_back\n#define MP make_pair\n#define LL long long\n#define uLL unsigned LL\n#define LD long double\n\nconst double pi = 3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342;\nconst int mod=1000000007;\n\nusing namespace std;\n\ntypedef pair<int, int> point_t;\ntypedef pair<int,point_t> node_t;\n\npoint_t operator+( point_t &lhs, point_t &rhs)\n{\n  point_t p = make_pair(lhs.first + rhs.first, lhs.second + rhs.second);\n  return p;\n}\n\npoint_t operator-( point_t &lhs, point_t &rhs)\n{\n  point_t p = make_pair(lhs.first - rhs.first, lhs.second - rhs.second);\n  return p;\n}\n\n\nbool operator==(point_t &lhs, point_t &rhs)\n{\n  return (lhs.first == rhs.first) && (lhs.second == rhs.second);\n}\n\nbool operator!=(point_t &lhs, point_t &rhs)\n{\n  return (lhs.first != rhs.first) || (lhs.second != rhs.second);\n}\n\n\nbool is_in_field(int row, int col,  point_t &point){\n  const int r = point.first;\n  const int c = point.second;\n  return (1<= c && c<=col) && (1 <= r && r <= row);\n}\n\n\nint greedyEval(point_t);\n\npoint_t pS;\npoint_t pG;\n\n\nint main(void){\n  int C,R;\n  cin>>C;\n  cin>>R;\n  char meiro[R+3][C+3];\n\n  vector<point_t> moves={MP(-1,0),MP(0,1),MP(1,0),MP(0,-1)};\n  vector< vector<int> > memo(R+3,vector<int>(C+3,9));\n  \n\n  \n  FORQ(i,1,R){\n    FORQ(j,1,C){\n      cin>>meiro[i][j];\n      if(meiro[i][j]=='S'){\n        pS.ST=i;\n        pS.ND=j;\n      }else if(meiro[i][j]=='G'){\n        pG.ST=i;\n        pG.ND=j;\n      }\n    }\n  }\n  \n  FORQ(i,1,R){\n    FORQ(j,1,C){\n      cout<<meiro[i][j];\n    }\n    cout<<endl;\n  }\n  \n  cout<< \"Start: \" << \"(\" << pS.ST << \",\" << pS.ND<<\")\"<<endl;\n  cout<<\"Goal:\"<<\"(\"<<pG.ST<<\",\"<<pG.ND <<\")\"<<endl;\n\n\n  auto Mstart = std::chrono::system_clock::now();\n  \n  priority_queue< node_t, vector<node_t>,greater<node_t> > stc;\n\n  stc.push(MP(greedyEval(pS),pS));\n  memo[pS.ST][pS.ND]=0;\n\n  \n  while(!stc.empty()){\n    node_t cur =  stc.top(); stc.pop();\n    memo[cur.ND.ST][cur.ND.ND]=1;\n    for(auto x: moves){\n      point_t next = cur.ND + x;\n      if(is_in_field(R,C,next)) {\n        if(meiro[next.ST][next.ND]!='#' && memo[next.ST][next.ND]==9) {\n          stc.push(MP(greedyEval(next),next));\n          memo[next.ST][next.ND] =0;\n          if(next==pG) {\n            memo[next.ST][next.ND]=1;\n            cout<<\"Yes\"<<endl;\n            FORQ(i,1,R){\n              FORQ(j,1,C){\n                cout<<memo[i][j];\n              }\n              cout<<endl;\n            }\n              \n            auto Mend = std::chrono::system_clock::now();       // ’·×’Â¬’½ª’Î»’»þ’¹ï’¤ò’ÊÝ’Â¸\n            auto dur = Mend - Mstart;        // ’Í×’¤·’¤¿’»þ’´Ö’¤ò’·×’»»\n            auto msec = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();\n            // ’Í×’¤·’¤¿’»þ’´Ö’¤ò’¥ß’¥ê’ÉÃ’¡Ê1/1000’ÉÃ’¡Ë’¤Ë’ÊÑ’´¹’¤·’¤Æ’É½’¼¨\n            cout <<endl<< msec << \" milli sec\"<<endl;\n            return 0;\n          }\n        }\n      }\n    }\n    \n  }\n\n\n  auto Mend = std::chrono::system_clock::now();       // ’·×’Â¬’½ª’Î»’»þ’¹ï’¤ò’ÊÝ’Â¸\n  auto dur = Mend - Mstart;        // ’Í×’¤·’¤¿’»þ’´Ö’¤ò’·×’»»\n  auto msec = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();\n  // ’Í×’¤·’¤¿’»þ’´Ö’¤ò’¥ß’¥ê’ÉÃ’¡Ê1/1000’ÉÃ’¡Ë’¤Ë’ÊÑ’´¹’¤·’¤Æ’É½’¼¨\n  cout <<endl<< msec << \" milli sec\"<<endl;\n  return -1;\n}\n\nint greedyEval(point_t px){\n  return abs(pG.ND-px.ND)+abs(pG.ST-px.ST);\n}\n" "bash-4.4$ g++ greedy2.cpp\nbash-4.4$ ./a.out < input.txt\n......G......\n.............\n...#######...\n.............\n.............\n.............\n.............\n.............\n.............\n......S......\n.............\nStart: (10,7)\nGoal:(1,7)\nYes\n9011111999999\n9010099999999\n9019999999999\n9011111111099\n9900111110999\n9999011109999\n9999901099999\n9999901099999\n9999901099999\n9999901099999\n9999990999999\n\n0 milli sec" "#include <cstdio>\n#include <cstdlib>\n#include <iostream>\n#include <fstream>\n#include <sstream>\n#include <set>\n#include <map>\n#include <vector>\n#include <list>\n#include <algorithm>\n#include <cstring>\n#include <cmath>\n#include <string>\n#include <queue>\n#include <stack>\n#include <numeric>\n#include <bitset>     //UWAGA - w czasie kompilacji musi byc znany rozmiar wektora - nie mozna go zmienic\n#include <cassert>\n#include <iomanip>        //do setprecision\n#include <ctime>\n#include <complex>\nusing namespace std;\n\n#define FOR(i,b,e) for(int i=(b);i<(e);++i)\n#define FORQ(i,b,e) for(int i=(b);i<=(e);++i)\n#define FORD(i,b,e) for(int i=(b)-1;i>=(e);--i)\n#define REP(x, n) for(int x = 0; x < (n); ++x)\n\n#define ST first\n#define ND second\n#define PB push_back\n#define MP make_pair\n#define LL long long\n#define uLL unsigned LL\n#define LD long double\n\nconst double pi = 3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342;\nconst int mod=1000000007;\n\nusing namespace std;\n\ntypedef pair<int, int> point_t;\ntypedef pair<int,point_t> node_t;\n\npoint_t operator+( point_t &lhs, point_t &rhs)\n{\n  point_t p = make_pair(lhs.first + rhs.first, lhs.second + rhs.second);\n  return p;\n}\n\npoint_t operator-( point_t &lhs, point_t &rhs)\n{\n  point_t p = make_pair(lhs.first - rhs.first, lhs.second - rhs.second);\n  return p;\n}\n\n\nbool operator==(point_t &lhs, point_t &rhs)\n{\n  return (lhs.first == rhs.first) && (lhs.second == rhs.second);\n}\n\nbool operator!=(point_t &lhs, point_t &rhs)\n{\n  return (lhs.first != rhs.first) || (lhs.second != rhs.second);\n}\n\n\nbool is_in_field(int row, int col,  point_t &point){\n  const int r = point.first;\n  const int c = point.second;\n  return (1<= c && c<=col) && (1 <= r && r <= row);\n}\n\n\nint greedyEval(point_t);\n\npoint_t pS;\npoint_t pG;\n\n\nint main(void){\n  int C,R;\n  cin>>C;\n  cin>>R;\n  char meiro[R+3][C+3];\n\n  vector<point_t> moves={MP(-1,0),MP(0,1),MP(1,0),MP(0,-1)};\n  vector< vector<int> > memo(R+3,vector<int>(C+3,9));\n  \n\n  \n  FORQ(i,1,R){\n    FORQ(j,1,C){\n      cin>>meiro[i][j];\n      if(meiro[i][j]=='S'){\n        pS.ST=i;\n        pS.ND=j;\n      }else if(meiro[i][j]=='G'){\n        pG.ST=i;\n        pG.ND=j;\n      }\n    }\n  }\n  \n  FORQ(i,1,R){\n    FORQ(j,1,C){\n      cout<<meiro[i][j];\n    }\n    cout<<endl;\n  }\n  \n  cout<< \"Start: \" << \"(\" << pS.ST << \",\" << pS.ND<<\")\"<<endl;\n  cout<<\"Goal:\"<<\"(\"<<pG.ST<<\",\"<<pG.ND <<\")\"<<endl;\n\n\n  auto Mstart = std::chrono::system_clock::now();\n  \n  priority_queue< node_t, vector<node_t>,greater<node_t> > stc;\n\n  stc.push(MP(greedyEval(pS),pS));\n  memo[pS.ST][pS.ND]=0;\n\n  \n  while(!stc.empty()){\n    node_t cur =  stc.top(); stc.pop();\n    memo[cur.ND.ST][cur.ND.ND]=1;\n    for(auto x: moves){\n      point_t next = cur.ND + x;\n      if(is_in_field(R,C,next)) {\n        if(meiro[next.ST][next.ND]!='#' && memo[next.ST][next.ND]==9) {\n          stc.push(MP(greedyEval(next),next));\n          memo[next.ST][next.ND] =0;\n          if(next==pG) {\n            memo[next.ST][next.ND]=1;\n            cout<<\"Yes\"<<endl;\n            FORQ(i,1,R){\n              FORQ(j,1,C){\n                cout<<memo[i][j];\n              }\n              cout<<endl;\n            }\n              \n            auto Mend = std::chrono::system_clock::now();       // ’·×’Â¬’½ª’Î»’»þ’¹ï’¤ò’ÊÝ’Â¸\n            auto dur = Mend - Mstart;        // ’Í×’¤·’¤¿’»þ’´Ö’¤ò’·×’»»\n            auto msec = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();\n            // ’Í×’¤·’¤¿’»þ’´Ö’¤ò’¥ß’¥ê’ÉÃ’¡Ê1/1000’ÉÃ’¡Ë’¤Ë’ÊÑ’´¹’¤·’¤Æ’É½’¼¨\n            cout <<endl<< msec << \" milli sec\"<<endl;\n            return 0;\n          }\n        }\n      }\n    }\n    \n  }\n\n\n  auto Mend = std::chrono::system_clock::now();       // ’·×’Â¬’½ª’Î»’»þ’¹ï’¤ò’ÊÝ’Â¸\n  auto dur = Mend - Mstart;        // ’Í×’¤·’¤¿’»þ’´Ö’¤ò’·×’»»\n  auto msec = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();\n  // ’Í×’¤·’¤¿’»þ’´Ö’¤ò’¥ß’¥ê’ÉÃ’¡Ê1/1000’ÉÃ’¡Ë’¤Ë’ÊÑ’´¹’¤·’¤Æ’É½’¼¨\n  cout <<endl<< msec << \" milli sec\"<<endl;\n  return -1;\n}\n\nint greedyEval(point_t px){\n  return abs(pG.ND-px.ND)+abs(pG.ST-px.ST);\n}\n" "no matching member function for call to 'push'" "greedyEval" "class point_t {\npublic:\n  int col;     // index in the flattened grid\n  int row;\n  double cost;  // cost of traversing this pixel\n};"))
+(setq kill-ring-yank-pointer (nthcdr 0 kill-ring))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/Users/freedom/test/stringSplit.cpp"
+  "stringSplit.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  223
+  '(1324 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (820 1 84))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/ICPC/2017_A.cpp"
+  "2017_A.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  1543
+  '(1433 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (1110 1 1350 1542 1320 1371 1608 1363 1246 1377 1517 1377 1341 1371 1608 1543))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/tansaku/input_8p.txt"
+  "input_8p.txt"
+  'text-mode
+  '(override-global-mode company-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  18
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/freedom/ICPC/2017_B.cpp"
+  "2017_B.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  1374
+  '(1083 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (1436 1607 1 1630 1558 1558 1595 1374))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/tansaku/greedy_complete.cpp"
+  "greedy_complete.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  2684
+  '(3968 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (3968 3948 3931 3914 3897 2684 3887 2741 2650 2404 961 3222 2539 3874 3864 1075))))
+
+(desktop-create-buffer 208
+  nil
+  "tansaku"
+  'dired-mode
+  '(override-global-mode company-mode helm-mode linum-mode global-whitespace-mode yas-minor-mode)
+  663
+  '(nil nil)
+  t
+  '("/Users/freedom/tansaku/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/freedom/tansaku/eight_puzzle.cpp"
+  "eight_puzzle.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  1269
+  '(1288 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (1129 1082 1173))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/Documents/4_zenki/’¿Í’¹©’ÃÎ’Ç½A/kadai/Astar.cpp"
+  "Astar.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  3904
+  '(4178 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (4161 4144 4127 3329 1 3765 3904))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/tansaku/Astar.cpp"
+  "Astar.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  2395
+  '(4178 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (4161 4144 4127 3721 3401 3411 2987 4078 1 4207 3789 3241 3329 3161 2921 4017))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/TopCoder/roadAndJunctions/RoadsAndJunctions.cpp"
+  "RoadsAndJunctions.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  1641
+  '(1934 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (1934 997 213 716 802 1235 1259 1310 1326 1259 1693 1861 1818 1687 1455 1494))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/TopCoder/MapRecoloring/MapRecoloring.cpp"
+  "MapRecoloring.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  1047
+  '(1047 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1 474 1026 1046 764))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/TopCoder/test/SameColorPairs3.cpp"
+  "SameColorPairs3.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  393
+  '(2371 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (1 95 493 1621 473 604 845 700 822 699 393))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/test/vector.cpp"
+  "vector.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  1176
+  '(1335 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (1266 1202 1200 1201 1385 1218 1388 1176 1162 1149 1176 1176 1218 1320 1213))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/TopCoder/test/SameColorPairs2.cpp"
+  "SameColorPairs2.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  2149
+  '(2371 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (1879 1622 1357 1821 1670 1397 2371 1 988 2281 1727 1453 1327 2027 1249 1032))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/TopCoder/test/SameColorPairs.cpp"
+  "SameColorPairs.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  684
+  '(1135 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1103 343 178 590 332 683 709 830 723 709 575 575 632 709 683 561))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/coder/007_C.cpp"
+  "007_C.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  3570
+  '(3374 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/freedom/TopCoder/roadAndJunctions/input001.txt"
+  "input001.txt"
+  'text-mode
+  '(override-global-mode company-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  25
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (25 25))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/tansaku/greedy3.cpp"
+  "greedy3.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  3581
+  '(1034 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (65 3971 1 2780 2657 3116 959 2390))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/tansaku/input2.txt"
+  "input2.txt"
+  'text-mode
+  '(override-global-mode company-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  109
+  '(106 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (95 84 73 29 18 7))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/tansaku/greedy6.cpp"
+  "greedy6.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  1086
+  '(1139 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (1011 1 1093 1085))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/tansaku/pque.cpp"
+  "pque.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  1879
+  '(1713 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (1 2621 2306 2277 2260 2243 2187 2165 2121 2416 2226 2209 2143 2099 1728 1895))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/tansaku/greedy5.cpp"
+  "greedy5.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  4247
+  '(2159 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (1880 4247 1 2163 2953))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/tansaku/greedy4.cpp"
+  "greedy4.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  2157
+  '(2001 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (1837 1894 1 1877 3545 2955 2929 2771))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/tansaku/input3.txt"
+  "input3.txt"
+  'text-mode
+  '(override-global-mode company-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  56
+  '(106 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (95 84 73 62 51 40 29 18 7))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/tansaku/greedy.cpp"
+  "greedy.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  1
+  '(4010 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (1436 1 4010 2875 3103 2426 2753 2685 1837 1618 3973 2093 1813 2215 1790 3964))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/TopCoder/roadAndJunctions/RoadsAndJunctions2.cpp"
+  "RoadsAndJunctions2.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  617
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (2195 644 729 1121 807 809 919 617 191 435 583 99))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/coder/typical/001_A.cpp"
+  "001_A.cpp"
+  'c++-mode
+  '(abbrev-mode override-global-mode company-mode irony-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  1
+  '(2592 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (1796 1741 2001 2090 2140))))
+
+(desktop-create-buffer 208
+  "/Users/freedom/tansaku/input.txt"
+  "input.txt"
+  'text-mode
+  '(override-global-mode company-mode helm-mode linum-mode global-whitespace-mode undo-tree-mode yas-minor-mode)
+  118
+  '(147 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (133 119 105 91 77 38 48 35 34 161 118))))
+

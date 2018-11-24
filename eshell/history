@@ -47,3 +47,8 @@ lsf
 source ~/.bashrc
 source
 gcc
+get-process "sudo"
+(process-id (get-process "sudo"))
+enw
+emacs
+pwd

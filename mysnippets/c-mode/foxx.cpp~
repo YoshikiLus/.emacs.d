@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: foxx
+# key: foxx
+# --
+FOR(i,0,${1:N}){
+    ${2:process}
+}
+
